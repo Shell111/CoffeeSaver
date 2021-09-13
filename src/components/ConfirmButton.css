@@ -1,0 +1,14 @@
+.confirm__button {
+  margin-top: 20px;
+}
+
+.confirm__button--btn {
+  width: 250px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #F98E67;
+  border: none;
+  font-size: 1.2em;
+  text-align: left;
+  padding-left: 20px;
+}

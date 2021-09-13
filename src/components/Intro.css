@@ -1,0 +1,17 @@
+/* .intro__section {
+  color: white;
+} */
+
+.intro__section--heading {
+  font-size: 1.4em;
+  max-width: 70%;
+}
+
+.intro__section--paragraph {
+  font-size: 1.2em;
+  max-width: 70%;
+}
+
+.intro__section--subcopy {
+  font-size: 1em;
+}

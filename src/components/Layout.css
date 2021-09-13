@@ -1,0 +1,21 @@
+body {
+  background-color: #7189F7;
+}
+
+.page {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.page__text {
+  color: rgb(247, 246, 246)
+}
+
+
+
+/* @media screen and (max-device-width: 480px) {
+  .page {
+    max-width: 420px;
+  }
+} */

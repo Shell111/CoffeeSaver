@@ -1,6 +1,6 @@
-import '../components/InputAmount.css'
-import '../components/CoffeeInput.css'
 
+import './CoffeeInput.css'
+import './InputAmount.css'
 
 export function CoffeeInput({coffeeAmount, onChange}){
 

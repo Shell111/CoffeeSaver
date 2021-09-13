@@ -1,0 +1,19 @@
+
+.input__section {
+  /* border: 1px solid red; */
+}
+
+
+.input__form--field {
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 7px 15px;
+  background-color: #7189F7;
+  border: 1px solid white;
+}
+
+.input__form--field::placeholder {
+  color: white;
+}
+
