@@ -1,0 +1,8 @@
+
+.input__section {
+  display: flex;
+}
+
+input__section--text {
+  margin-left: 10px;
+}

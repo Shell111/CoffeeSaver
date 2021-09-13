@@ -1,0 +1,12 @@
+.calendar {
+  height: 300px;
+}
+
+.react-calendar_custom {
+  background-color: white;
+  width: 380px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1.5px solid #CCEFCC;
+  margin-top: 20px;
+}
