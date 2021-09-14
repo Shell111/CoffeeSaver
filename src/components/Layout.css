@@ -1,12 +1,25 @@
 body {
-  background-color: #7189F7;
+  /* background-color: #7189F7; */
+  padding: 100px 0;
 }
 
 .page {
   width: 80%;
   margin: 0 auto;
-  padding-top: 50px;
+  padding: 50px 0 40px 40px;
+  border: 1px solid red;
+  border-radius: 40px;
+  background-color: #7189F7;
+  /* background-color: rgba(140, 159, 245, 0.5); */
+  /* box-shadow: 3.2px 6.4px 6.4px hsl(0deg 0% 0% / 0.20); */
+  box-shadow: 4.7px 9.4px 9.4px hsl(0deg 0% 0% / 0.35);
+
+
 }
+
+/* .page__dark {
+  background-color: #323a5e;
+} */
 
 .page__text {
   color: rgb(247, 246, 246)

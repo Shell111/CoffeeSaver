@@ -1,10 +1,12 @@
 
 .input__section {
-  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
 }
 
 
-.input__form--field {
+.input__section--field {
   width: 200px;
   height: 30px;
   border-radius: 10px;
@@ -13,7 +15,10 @@
   border: 1px solid white;
 }
 
-.input__form--field::placeholder {
+.input__section--field::placeholder {
   color: white;
 }
 
+.input__section--text {
+
+}

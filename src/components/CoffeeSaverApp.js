@@ -2,6 +2,7 @@ import './Layout.css'
 import 'react-calendar/dist/Calendar.css';
 import './Calendar.css'
 import './Total.css'
+import './DarkMode.css'
 
 import React, { useState } from 'react';
 
@@ -12,12 +13,13 @@ import Calendar from 'react-calendar'
 import { ConfirmButton } from './ConfirmButton'
 import { Total } from './Total'
 import { CoffeeInput } from './CoffeeInput'
+import DarkMode from './DarkMode'
 
 
 export function CoffeeSaverApp(){
   const [value, onChange] = useState(new Date());
 
-  const [amountInput, setAmountInput] = useState(0);
+  const [amountInput, setAmountInput] = useState(0); 
   const [coffeeAmount, setCoffeeAmount] = useState(0);
   const [totalSaving, setTotalSaving] = useState(0);
 
@@ -25,9 +27,11 @@ export function CoffeeSaverApp(){
 
 
   return(
-    <div className="page">
-      <Header/>
-      <Intro/>
+    <div className="page page__dark ">
+      <DarkMode/>
+        <Header />
+        <Intro/>
+
       <InputAmount
         amountInput={amountInput}
         onChange={(e) => setAmountInput(e.target.value)}
@@ -45,7 +49,7 @@ export function CoffeeSaverApp(){
             showWeekNumbers
             value={value}
           />
-        </main>
+      </main>
 
       <ConfirmButton text={'Added to savings today'}
           onClick={(e) => {

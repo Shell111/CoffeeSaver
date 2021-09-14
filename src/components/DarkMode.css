@@ -1,0 +1,62 @@
+#darkMode {
+  /* width: 45px;
+  height: 45px;
+  background-color: rgb(122, 81, 237);
+  border-radius: 50%;
+  border: none; */
+
+  height: 50px;
+  width: 100px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #CBEFCC;
+  position: relative;
+  cursor: pointer;
+}
+
+/* #darkMode.dark {
+  background-color: blue
+} */
+
+.toggle__notch {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: #7189F7;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  box-shadow: 0 0 2px white;
+  transition: all 0.3s ease;
+}
+
+.toggle__notch:hover {
+  background-color: #F98E67;
+  transform: translate(50px, 0)
+}
+
+/* Light theme - Yellow body background */
+body.light {
+  background-color: rgb(249, 222, 156);
+  color: black;
+}
+
+.light .intro__section--heading{
+  color: black;
+}
+
+.light .page__text {
+  color: black;
+}
+
+/* Dark theme - Blue body background */
+body.dark {
+  background-color: #7189F7;
+  /* color: yellow */
+}
+
+.dark .page {
+  background-color:#8ba0fa;
+}
+

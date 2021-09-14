@@ -7,7 +7,7 @@ export function ConfirmButton({onClick, text}){
       <div className="confirm__button">
         <button className="confirm__button--btn" onClick={() =>{
           onClick()
-        }} >{text}</button>
+        }} >{text}: </button>
       </div>
     </div>
   )
