@@ -1,5 +1,4 @@
 
-// import './CoffeeInput.css'
 import './InputAmount.css'
 
 export function CoffeeInput({coffeeAmount, onChange}){
@@ -8,15 +7,14 @@ export function CoffeeInput({coffeeAmount, onChange}){
     <div className="input">
 
       <div className="input__section">
-
           <input value={coffeeAmount} 
             onChange={onChange} 
             className="input__section--field" 
             type="text" 
-            placeholder="How many coffees are you saving?"
+            aria-label="How many coffees saved?"
+            placeholder="How many coffees saved?"
           />
-          <p className="input__section--text">Coffees: {coffeeAmount}</p>
-
+          {/* <p className="input__section--text">Coffees: {coffeeAmount}</p> */}
 
       </div>
 

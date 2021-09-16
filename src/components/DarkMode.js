@@ -32,12 +32,14 @@ const DarkMode = () => {
   }
 
   return (
-    <div
-      className={theme === 'dark' ? clickedClass : ''}
-      id="darkMode"
-      onClick={(e) => toggleTheme(e)}
-    >
-      <div className="toggle__notch"></div>
+    <div className="darkmode">
+      <div
+        className={theme === 'dark' ? clickedClass : ''}
+        id="darkMode"
+        onClick={(e) => toggleTheme(e)}
+      >
+        <div className="toggle__notch"></div>
+      </div>
     </div>
   )
 }

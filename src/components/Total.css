@@ -1,16 +1,14 @@
 
-@media screen and (min-width: 400px){
-  .total__section {
-    width: 350px
-  }
-}
-
 .total__section {
-  margin-top: 50px;
-  border: 1px solid orange;
+  display: grid;
+  grid-template-columns: 1fr 50%;  
+  margin: 50px 0 20px 0;
+  border: 1px solid #F3605F;
   border-radius: 20px;
   padding: 10px 20px;
-  width: 90%;
+  /* max-width: 360px;   */
+  max-width: 100%;
+  box-shadow: 4.7px 9.4px 9.4px hsl(0deg 0% 0% / 0.15);
 }
 
 .total__section--title {
@@ -22,4 +20,10 @@
 .total__section--amount {
   font-size: 2em;
   margin-top: 10px;
+}
+
+@media screen and (min-width: 400px){
+  .total__section {
+    max-width: 100%;
+  }
 }

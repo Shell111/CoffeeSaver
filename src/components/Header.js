@@ -1,7 +1,7 @@
 
 
 import './Header.css'
-import coffee_saver from '../images/coffee_saver.png'
+import coffee_saver from '../images/coffee-saver-logo-light.png'
 
 // import React, { useState } from 'react';
 

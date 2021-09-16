@@ -15,7 +15,7 @@ export function InputAmount({amountInput, onChange}){
             type="text" 
             placeholder="Enter amount here"
           />
-          <p>${amountInput}</p>
+          {/* <p>${amountInput}</p> */}
 
           
       </div>
