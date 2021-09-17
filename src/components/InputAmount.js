@@ -12,7 +12,7 @@ export function InputAmount({amountInput, onChange}){
           <input value={amountInput} 
             onChange={onChange} 
             className="input__section--field" 
-            type="text" 
+            type="number" 
             placeholder="Enter amount here"
           />
           {/* <p>${amountInput}</p> */}

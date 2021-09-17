@@ -1,28 +1,28 @@
-
 .total__section {
   display: grid;
-  grid-template-columns: 1fr 50%;  
-  margin: 50px 0 20px 0;
-  border: 1px solid #F3605F;
+  grid-template-columns: 1fr 45%;
+  margin: 40px 0 20px 0;
+  border: 2px solid #f3605f;
   border-radius: 20px;
   padding: 10px 20px;
   /* max-width: 360px;   */
   max-width: 100%;
-  box-shadow: 4.7px 9.4px 9.4px hsl(0deg 0% 0% / 0.15);
+  box-shadow: 4.7px 9.4px 9.4px hsl(0deg 0% 0% / 0.1);
 }
 
 .total__section--title {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: 400;
   margin-bottom: 0;
+  padding-top: 5px;
 }
 
 .total__section--amount {
-  font-size: 2em;
-  margin-top: 10px;
+  font-size: 2.9em;
+  margin-top: 25px;
 }
 
-@media screen and (min-width: 400px){
+@media screen and (min-width: 400px) {
   .total__section {
     max-width: 100%;
   }

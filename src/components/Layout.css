@@ -14,10 +14,13 @@ body {
   border-radius: 40px;
 }
 
-
 .page__text {
   color: rgb(247, 246, 246);
 }
+
+/* h4 {
+  font-weight: 300;
+} */
 
 .clear-item {
   position: relative;

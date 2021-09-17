@@ -18,34 +18,54 @@ import { Footer } from './Footer';
 
 
 export function CoffeeSaverApp(){
-  // const [value, onChange] = useState(new Date());
   const [date, setDate] = useState(new Date());
-
-  const [amountInput, setAmountInput] = useState(""); 
-  const [coffeeAmount, setCoffeeAmount] = useState("");
-
-  // const [history, setHistory] = useState()
-
+  const [amountInput, setAmountInput] = useState(0); 
+  const [coffeeAmount, setCoffeeAmount] = useState(0);
 
   // This sets the values in storage
-  const [totalSaving, setTotalSaving] = useState(() => {
+  const [data, setData] = useState(() => {
     const storedTotal = localStorage.getItem("total") 
-    return storedTotal !== null ? JSON.parse(storedTotal) : 0
+    return storedTotal !== null ? JSON.parse(storedTotal) : []
   })
-  localStorage.setItem("total", totalSaving)
-
 
   let savingsToday = coffeeAmount * amountInput
+
+  // This calculates the coffee price and quantity 
+  let sum = 0 
+  data.forEach(item => {
+    const value = item.coffeeAmount * item.amountInput 
+    sum = sum + value
+  })
+  console.log(sum)
   
 
-  // function storeHistory(date, amount) {
+  function updateData(amountInput, coffeeAmount, date,) {
+  // Receive amountInput, coffeeAmount, date, 
+  // Create an object with the received values
+    const tempObject = {
+      date,
+      amountInput,
+      coffeeAmount
+    }
+    const newArray = [...data, tempObject]
+    setData(newArray)
+    localStorage.setItem("total", JSON.stringify(newArray))
+    resetState()
+  }
+  console.log(data)
 
-  // }
+  // This will reset state and inputs to 0
+  function resetState() {
+    setAmountInput(0)
+    setCoffeeAmount(0)
+  }
 
 
   // To run clear storage
   const clearItem = () => {
     localStorage.removeItem("total");
+    setData([])
+    resetState()
   }
 
   // This converts date format
@@ -69,7 +89,7 @@ export function CoffeeSaverApp(){
         coffeeAmount={coffeeAmount}
         onChange={(e) => setCoffeeAmount(e.target.value)}  
       />
-      <h3 className="page__text">Today's savings: ${savingsToday}</h3>
+      <p className="intro__section--subcopy page__text">{`Saving $${savingsToday} on ${date.toDateString()}`}</p>
 
       <main className="calendar__section" >
           <Calendar className="react-calendar react-calendar__viewContainer react-calendar_custom" 
@@ -82,17 +102,19 @@ export function CoffeeSaverApp(){
           />
       </main>
       
-      <ConfirmButton text={`Added to savings on ${date.toDateString()} $${savingsToday}`}
+      <ConfirmButton text={`Add to savings`}
           onClick={(e) => {
-          setTotalSaving(totalSaving + savingsToday)
+            updateData(amountInput, coffeeAmount, date)
+          // setTotalSaving(totalSaving + savingsToday)
+          }
         }
-      }/>
-      <Total totalSaving={totalSaving} />
+      />
+      <Total totalSaving={sum} />
 
       <div>
         <button className="clear-item" onClick={clearItem}>Clear balance</button>
       </div>
-      
+
       <Footer/>
     </div>
   )

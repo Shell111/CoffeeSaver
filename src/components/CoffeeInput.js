@@ -10,7 +10,7 @@ export function CoffeeInput({coffeeAmount, onChange}){
           <input value={coffeeAmount} 
             onChange={onChange} 
             className="input__section--field" 
-            type="text" 
+            type="number" 
             aria-label="How many coffees saved?"
             placeholder="How many coffees saved?"
           />
