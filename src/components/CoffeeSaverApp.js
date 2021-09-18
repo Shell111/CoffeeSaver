@@ -15,12 +15,14 @@ import { Total } from './Total'
 import { CoffeeInput } from './CoffeeInput'
 import DarkMode from './DarkMode'
 import { Footer } from './Footer';
+import { DisplayEntries } from './DisplayEntries';
 
 
 export function CoffeeSaverApp(){
   const [date, setDate] = useState(new Date());
   const [amountInput, setAmountInput] = useState(0); 
   const [coffeeAmount, setCoffeeAmount] = useState(0);
+  const [showEntryHistory, setShowEntryHistory] = useState(false);
 
   // This sets the values in storage
   const [data, setData] = useState(() => {
@@ -53,6 +55,11 @@ export function CoffeeSaverApp(){
     resetState()
   }
   console.log(data)
+  
+
+  // Display entries
+  const onClick = () => setShowEntryHistory(!showEntryHistory)
+
 
   // This will reset state and inputs to 0
   function resetState() {
@@ -113,6 +120,13 @@ export function CoffeeSaverApp(){
 
       <div>
         <button className="clear-item" onClick={clearItem}>Clear balance</button>
+      </div>
+      
+      <div>
+        <div>
+          <button onClick={onClick}>Show History</button>
+          {showEntryHistory ? DisplayEntries(data) : null}
+        </div>
       </div>
 
       <Footer/>
