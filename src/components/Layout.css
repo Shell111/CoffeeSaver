@@ -18,10 +18,6 @@ body {
   color: rgb(247, 246, 246);
 }
 
-/* h4 {
-  font-weight: 300;
-} */
-
 .clear-item {
   position: relative;
   left: 290px;
@@ -32,6 +28,18 @@ body {
   font-size: 0.9em;
   padding: 7px 7px;
   color: #300b07;
+  box-shadow: 2.7px 6.4px 6.4px hsl(0deg 0% 0% / 0.15);
+  transition: ease-in-out .2s;
+}
+
+.clear-item:hover {
+  box-shadow: 1.7px 3.4px 3.4px hsl(0deg 0% 0% / 0.05);
+}
+
+.history__items {
+  border: 1px solid #F3605F;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 @media screen and (max-device-width: 420px) {

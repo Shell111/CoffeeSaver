@@ -4,8 +4,8 @@ import './InputAmount.css'
 export function CoffeeInput({coffeeAmount, onChange}){
 
   return(
-    <div className="input">
-
+    <div>
+      <p className="input__label-text page__text">How many coffees?</p>
       <div className="input__section">
           <input value={coffeeAmount} 
             onChange={onChange} 

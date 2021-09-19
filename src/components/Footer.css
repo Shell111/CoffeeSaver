@@ -1,3 +1,24 @@
 .footer {
   margin-top: 50px;
 }
+
+.footer__nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer__links {
+  padding: 7px 9px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+.footer__text {
+  margin: 0;
+  display: inline;
+  font-size: 0.9em;
+  position: relative;
+  left: -80px;
+}

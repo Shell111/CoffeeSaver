@@ -5,6 +5,12 @@ import './Total.css'
 import './DarkMode.css'
 
 import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 import { Header } from './Header'
 import { Intro } from './Intro'
@@ -22,7 +28,7 @@ export function CoffeeSaverApp(){
   const [date, setDate] = useState(new Date());
   const [amountInput, setAmountInput] = useState(0); 
   const [coffeeAmount, setCoffeeAmount] = useState(0);
-  const [showEntryHistory, setShowEntryHistory] = useState(false);
+  // const [showEntryHistory, setShowEntryHistory] = useState(false);
 
   // This sets the values in storage
   const [data, setData] = useState(() => {
@@ -38,7 +44,7 @@ export function CoffeeSaverApp(){
     const value = item.coffeeAmount * item.amountInput 
     sum = sum + value
   })
-  console.log(sum)
+  // console.log(sum)
   
 
   function updateData(amountInput, coffeeAmount, date,) {
@@ -54,11 +60,12 @@ export function CoffeeSaverApp(){
     localStorage.setItem("total", JSON.stringify(newArray))
     resetState()
   }
-  console.log(data)
   
 
   // Display entries
-  const onClick = () => setShowEntryHistory(!showEntryHistory)
+  // const onClick = () => setShowEntryHistory(true)
+  // const onClick = () => setShowEntryHistory(!showEntryHistory)
+
 
 
   // This will reset state and inputs to 0
@@ -83,53 +90,65 @@ export function CoffeeSaverApp(){
 
 
   return(
-    <div className="page page__dark ">
+    <Router>
+      <div className="page page__dark ">
 
-      <DarkMode/>
-      <Header />
-      <Intro/>
-      <InputAmount
-        amountInput={amountInput}
-        onChange={(e) => setAmountInput(e.target.value)}
-      />
-      <CoffeeInput 
-        coffeeAmount={coffeeAmount}
-        onChange={(e) => setCoffeeAmount(e.target.value)}  
-      />
-      <p className="intro__section--subcopy page__text">{`Saving $${savingsToday} on ${date.toDateString()}`}</p>
+        <DarkMode/>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <div>
+              <Intro/>
+              <InputAmount
+                amountInput={amountInput}
+                onChange={(e) => setAmountInput(e.target.value)}
+              />
+              <CoffeeInput 
+                coffeeAmount={coffeeAmount}
+                onChange={(e) => setCoffeeAmount(e.target.value)}  
+              />
+              <p className="intro__section--subcopy page__text">{`Saving $${savingsToday} on ${date.toDateString()}`}</p>
 
-      <main className="calendar__section" >
-          <Calendar className="react-calendar react-calendar__viewContainer react-calendar_custom" 
-            // onChange={onChange}
-            // showWeekNumbers
-            // value={value}
-            onChange={onDateChange}
-            showWeekNumbers
-            value={date}
-          />
-      </main>
-      
-      <ConfirmButton text={`Add to savings`}
-          onClick={(e) => {
-            updateData(amountInput, coffeeAmount, date)
-          // setTotalSaving(totalSaving + savingsToday)
-          }
-        }
-      />
-      <Total totalSaving={sum} />
+              <main className="calendar__section" >
+                  <Calendar className="react-calendar react-calendar__viewContainer react-calendar_custom" 
+                    // onChange={onChange}
+                    // showWeekNumbers
+                    // value={value}
+                    onChange={onDateChange}
+                    showWeekNumbers
+                    value={date}
+                  />
+              </main>
+              
+              <ConfirmButton text={`Add to savings`}
+                  onClick={(e) => {
+                    updateData(amountInput, coffeeAmount, date)
+                  // setTotalSaving(totalSaving + savingsToday)
+                  }}
+              />
+              <Total totalSaving={sum} />
 
-      <div>
-        <button className="clear-item" onClick={clearItem}>Clear balance</button>
+              <div>
+                <button className="clear-item" onClick={clearItem}>Clear balance</button>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                {/* <Link to='/history'>
+                  <button onClick={onClick}>Show History</button>
+                </Link> */}
+              </div>
+            </div>
+          </Route> 
+
+          <Route path="/history"><div>{DisplayEntries(data)}</div> </Route>
+
+        {/* <div>{showEntryHistory ? DisplayEntries(data) : null}</div> */}
+        </Switch>
+
+        <Footer/>
       </div>
-      
-      <div>
-        <div>
-          <button onClick={onClick}>Show History</button>
-          {showEntryHistory ? DisplayEntries(data) : null}
-        </div>
-      </div>
-
-      <Footer/>
-    </div>
+    </Router>
   )
 }
