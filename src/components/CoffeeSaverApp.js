@@ -22,6 +22,7 @@ import { CoffeeInput } from './CoffeeInput'
 import DarkMode from './DarkMode'
 import { Footer } from './Footer';
 import { DisplayEntries } from './DisplayEntries';
+import { About } from './About'
 
 
 export function CoffeeSaverApp(){
@@ -143,6 +144,7 @@ export function CoffeeSaverApp(){
           </Route> 
 
           <Route path="/history"><div>{DisplayEntries(data)}</div> </Route>
+          <Route path="/about">{About}</Route>
 
         {/* <div>{showEntryHistory ? DisplayEntries(data) : null}</div> */}
         </Switch>
