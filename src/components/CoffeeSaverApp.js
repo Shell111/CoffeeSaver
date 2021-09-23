@@ -22,14 +22,14 @@ import DarkMode from './DarkMode'
 import { Footer } from './Footer';
 import { DisplayEntries } from './DisplayEntries';
 import { About } from './About'
-import { Popup } from './Popup'
+import { PopUp } from './PopUp/PopUp'
 
 
 export function CoffeeSaverApp(){
   const [date, setDate] = useState(new Date());
   const [amountInput, setAmountInput] = useState(0); 
   const [coffeeAmount, setCoffeeAmount] = useState(0);
-  const [popup, setPopup] = useState({
+  const [popUp, setPopUp] = useState({
     show: false, // initial values set to false and null
   });
   // const [showEntryHistory, setShowEntryHistory] = useState(false);
@@ -81,25 +81,25 @@ export function CoffeeSaverApp(){
 
   // To run clear storage with Pop up to confirm
   const clearItemTrue = () => {
-    setPopup({
+    setPopUp({
       show: true,
     })
     localStorage.removeItem("total");
     setData([])
     resetState()
-    setPopup({
+    setPopUp({
       show: false,
     })
   }
 
   const clearItemFalse = () => {
-    setPopup({
+    setPopUp({
       show: false,
     })
   }
 
   const clearItem = () => {
-    setPopup({
+    setPopUp({
       show: true,
     });
   };
@@ -156,7 +156,7 @@ export function CoffeeSaverApp(){
 
                 <button className="clear-item" onClick={clearItem}>Clear balance</button>
 
-                {popup.show && (<Popup
+                {popUp.show && (<PopUp
                   clearItemTrue={clearItemTrue}
                   clearItemFalse={clearItemFalse}
                   />
