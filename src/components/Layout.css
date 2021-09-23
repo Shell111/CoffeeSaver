@@ -36,10 +36,26 @@ body {
   box-shadow: 1.7px 3.4px 3.4px hsl(0deg 0% 0% / 0.05);
 }
 
+.dark .clear-item {
+  background-color: #300b07;
+  color: white;
+}
+
+.dark .clear-item:hover {
+  box-shadow: 1.7px 3.4px 3.4px hsl(0deg 0% 0% / 0.05);
+  background: #C24040;
+}
+
 .history__items {
   border: 1px solid #F3605F;
   border-radius: 10px;
   padding: 10px;
+}
+
+.display-history {
+  min-height: 400px;
+  width: 85%;
+  line-height: 1.5;
 }
 
 @media screen and (max-device-width: 420px) {

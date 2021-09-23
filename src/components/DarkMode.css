@@ -75,7 +75,7 @@ body.dark {
   box-shadow: 10px 10px #F3605F
 }
 
-.dark .clear-item {
-  background-color: #300b07;
-  color: white;
-}
+
+/* .dark .clear-item:hover {
+  box-shadow: 4.7px 3.4px 3.4px hsl(0deg 0% 0% / 0.95);
+} */

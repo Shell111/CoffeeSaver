@@ -8,11 +8,17 @@
 }
 
 .footer__links {
-  padding: 7px 9px;
   font-size: 0.9em;
   text-transform: uppercase;
   text-decoration: none;
   justify-content: space-between;
+  padding: 8px 10px;
+}
+
+.footer__links:hover {
+  background-color: #F3605F;
+  border-radius: 20px;
+  /* border: 1px solid #F3605F */
 }
 
 .footer__text {
@@ -21,4 +27,10 @@
   font-size: 0.9em;
   position: relative;
   left: -80px;
+}
+
+@media screen and (max-device-width: 420px) {
+  .footer__text {
+    left: -30px;
+  }
 }

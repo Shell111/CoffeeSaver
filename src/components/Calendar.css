@@ -23,5 +23,11 @@
 }
 
 .react-calendar__tile--active:enabled:focus {
-  background-color: #F3605F;
+  background-color: #C24040;
 }
+
+.react-calendar__tile--now {
+  background-color: #F3605F;
+  border-radius: 6px;;
+}
+

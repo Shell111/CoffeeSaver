@@ -9,7 +9,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 import { Header } from './Header'
@@ -23,12 +22,16 @@ import DarkMode from './DarkMode'
 import { Footer } from './Footer';
 import { DisplayEntries } from './DisplayEntries';
 import { About } from './About'
+import { Popup } from './Popup'
 
 
 export function CoffeeSaverApp(){
   const [date, setDate] = useState(new Date());
   const [amountInput, setAmountInput] = useState(0); 
   const [coffeeAmount, setCoffeeAmount] = useState(0);
+  const [popup, setPopup] = useState({
+    show: false, // initial values set to false and null
+  });
   // const [showEntryHistory, setShowEntryHistory] = useState(false);
 
   // This sets the values in storage
@@ -37,15 +40,15 @@ export function CoffeeSaverApp(){
     return storedTotal !== null ? JSON.parse(storedTotal) : []
   })
 
-  let savingsToday = coffeeAmount * amountInput
+  let savingsToday = Number(coffeeAmount) * Number(amountInput)
 
   // This calculates the coffee price and quantity 
   let sum = 0 
   data.forEach(item => {
     const value = item.coffeeAmount * item.amountInput 
     sum = sum + value
+    console.log(sum)
   })
-  // console.log(sum)
   
 
   function updateData(amountInput, coffeeAmount, date,) {
@@ -76,12 +79,30 @@ export function CoffeeSaverApp(){
   }
 
 
-  // To run clear storage
-  const clearItem = () => {
+  // To run clear storage with Pop up to confirm
+  const clearItemTrue = () => {
+    setPopup({
+      show: true,
+    })
     localStorage.removeItem("total");
     setData([])
     resetState()
+    setPopup({
+      show: false,
+    })
   }
+
+  const clearItemFalse = () => {
+    setPopup({
+      show: false,
+    })
+  }
+
+  const clearItem = () => {
+    setPopup({
+      show: true,
+    });
+  };
 
   // This converts date format
   const onDateChange = (newDate) => {
@@ -108,7 +129,7 @@ export function CoffeeSaverApp(){
                 coffeeAmount={coffeeAmount}
                 onChange={(e) => setCoffeeAmount(e.target.value)}  
               />
-              <p className="intro__section--subcopy page__text">{`Saving $${savingsToday} on ${date.toDateString()}`}</p>
+              <p className="intro__section--subcopy page__text">{`Saving $${savingsToday.toFixed(2)} on ${date.toDateString()}`}</p>
 
               <main className="calendar__section" >
                   <Calendar className="react-calendar react-calendar__viewContainer react-calendar_custom" 
@@ -127,10 +148,19 @@ export function CoffeeSaverApp(){
                   // setTotalSaving(totalSaving + savingsToday)
                   }}
               />
-              <Total totalSaving={sum} />
+              <Total totalSaving={sum.toFixed(2)} />
 
               <div>
+ 
+                {/* <button className="clear-item" onClick={clearItem}>Clear balance</button> */}
+
                 <button className="clear-item" onClick={clearItem}>Clear balance</button>
+
+                {popup.show && (<Popup
+                  clearItemTrue={clearItemTrue}
+                  clearItemFalse={clearItemFalse}
+                  />
+                )}
               </div>
             </div>
 

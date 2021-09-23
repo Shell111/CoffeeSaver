@@ -13,6 +13,7 @@ export function CoffeeInput({coffeeAmount, onChange}){
             type="number" 
             aria-label="How many coffees saved?"
             placeholder="How many coffees saved?"
+            min="0" 
           />
           {/* <p className="input__section--text">Coffees: {coffeeAmount}</p> */}
 

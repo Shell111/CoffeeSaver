@@ -9,7 +9,7 @@ export function Footer() {
   return(
     <div className="footer">
       <nav className="footer__nav">
-        <p className="footer__links footer__text page__text" >&copy; {year}</p>
+        <p className="footer__text page__text" >&copy; {year}</p>
         <Link className="footer__links page__text" to="/history">View history</Link>
         <Link className="footer__links page__text" to="/about">About</Link>
         <Link className="footer__links page__text" to="/">Home</Link>
