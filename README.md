@@ -37,6 +37,7 @@ Wireframes were created in Figma to demonstrate and prove the UI of the app, and
 ### Design
 High-fidelity designs were developed using Figma, incorporating the UI components, visual design, and dark and light mode themes
 The app was also designed primarily for mobile use, however can be used on desktop or iPad devices.
+
 ![Figma designs showing iPhone and Desktop mock ups](src/images/Figma-app-designs.png)
 
 
@@ -45,6 +46,10 @@ Additional functionality to be added:
 + ability to export data to a txt file
 + ability to save favourite entries for an even easier add
 
+
+## Screenshots of desktop interface, both light and dark mode
+![Screenshot of desktop app in light mode](src/images/coffee-saver-light-mode-desktop.png)
+![Screenshot of desktop app in dark mode](src/images/coffee-saver-dark-mode-desktop.png)
 
 Acknowledgement: This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
