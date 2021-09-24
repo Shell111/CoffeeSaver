@@ -2,7 +2,7 @@
 
 Visit the live app here: http://coffeesaverapp.surge.sh/
 
-The idea behind this app is to record the coffees (or other regularly purchased item) that you decide not to buy. It's a habit tracker that encourages you to save regular purchases and see the balance of what you're not spending increase. It aims to provide motivation around changing habits and noticing how small expenses can quickly add up.
+The idea behind this app is to record the coffees (or other regularly purchased item) that you decide not to buy. It's a habit tracker that encourages you to save regular purchases and see the balance of what you're not spending increase. It aims to provide motivation around changing habits and noticing how small savings can quickly add up.
 
 The app incorporates a calendar which also allows users to select dates to allocate their saving entry to. This data is saved in the browser's local storage, and can easily be reset by selecting the 'Clear history' button.
 

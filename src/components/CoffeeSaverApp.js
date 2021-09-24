@@ -31,7 +31,7 @@ export function CoffeeSaverApp(){
   const [popUp, setPopUp] = useState({
     show: false, // initial values set to false and null
   });
-  // const [showEntryHistory, setShowEntryHistory] = useState(false);
+
 
   // This sets the values in storage
   const [data, setData] = useState(() => {
@@ -39,6 +39,7 @@ export function CoffeeSaverApp(){
     return storedTotal !== null ? JSON.parse(storedTotal) : []
   })
 
+  // This gives a temporary total under the inputs of the amount being entered
   let savingsToday = Number(coffeeAmount) * Number(amountInput)
 
   // This calculates the coffee price and quantity 
@@ -50,6 +51,7 @@ export function CoffeeSaverApp(){
   })
   
 
+  // This sets the tempObject in local storage
   function updateData(amountInput, coffeeAmount, date,) {
   // Receive amountInput, coffeeAmount, date, 
   // Create an object with the received values
