@@ -12,7 +12,10 @@ export function DisplayEntries(data) {
       <p className="page__text">{!localStorage.getItem("total") ? messageNothingSaved : messageItemsSaved}</p>
       
       {data.map((entry,i) => {
-        return <p className="history__items page__text" key={i}>{`Transaction on: ${entry.date}, price: $${entry.amountInput}, coffees saved: ${entry.coffeeAmount}`}
+        let dateFormat = new Date(entry.date)
+        let dateDisplay = dateFormat.getFullYear()+'/'+(dateFormat.getMonth()+1)+'/'+dateFormat.getDate();
+
+        return <p className="history__items page__text" key={i}>{`Transaction on: ${dateDisplay}, price: $${entry.amountInput}, coffees saved: ${entry.coffeeAmount}`}
         </p>
         
       })

@@ -1,4 +1,4 @@
-.darkmode {
+.darkmode__wrapper {
   display: flex;
   justify-content: flex-end;
   margin-right: 6px;
@@ -30,17 +30,22 @@
   transition: all 0.3s ease;
 }
 
-.toggle__notch:hover {
+.dark .toggle__notch {
   background-color: #F3605F;
-  transform: translate(30px, 0)
+  transform: translate(30px, 0);
 }
+
+.light .toggle__notch {
+  background-color: #F3605F;
+  transform: translate(0, 0);
+}
+
 
 /* LIGHT THEME - pink body background */
 body.light {
   background-color: #F6ABAB;
   color: #691A15;
-  background-image: url('../images/bkgd-image-light.jpg');
-  transition: ease .1s
+  background-image: url('../../images/bkgd-image-light.jpg');
 }
 
 .light .intro__section--heading{
@@ -50,7 +55,6 @@ body.light {
 .light .page {
   background-color: #FBD5D5;
   border: .5px dotted #ce9999;
-  transition: ease .3s;
   box-shadow: 10px 10px #763333;
 }
 
@@ -62,18 +66,12 @@ body.light {
 /* DARK THEME - Chocolate body background */
 body.dark {
   background-color: #300b07;
-  transition: ease .3s;
-  background-image: url('../images/bkgd-image-dark.jpg')
+  background-image: url('../../images/bkgd-image-dark.jpg')
 }
 
 .dark .page {
   background-color:#450D0D;
-  transition: ease .3s;
   border: .5px dotted #b56d6d;
   box-shadow: 10px 10px #F3605F
 }
 
-
-/* .dark .clear-item:hover {
-  box-shadow: 4.7px 3.4px 3.4px hsl(0deg 0% 0% / 0.95);
-} */

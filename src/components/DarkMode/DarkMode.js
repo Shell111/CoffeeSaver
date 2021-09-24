@@ -32,7 +32,7 @@ const DarkMode = () => {
   }
 
   return (
-    <div className="darkmode">
+    <div className="darkmode__wrapper">
       <div
         className={theme === 'dark' ? clickedClass : ''}
         id="darkMode"

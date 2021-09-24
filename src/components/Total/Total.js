@@ -1,6 +1,6 @@
 
+
 import './Total.css'
-import './Layout.css'
 
 export function Total({totalSaving}){
 

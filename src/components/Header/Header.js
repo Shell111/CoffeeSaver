@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 
 import './Header.css'
-import coffee_saver from '../images/coffee-saver-logo-light.png'
-
-// import React, { useState } from 'react';
+import coffee_saver from '../../images/coffee-saver-logo-light.png'
 
 
 export function Header(){

@@ -6,8 +6,6 @@
 
 .confirm__button--btn {
   width: 100%;
-  /* width: 65%; */
-  /* height: 90px; */
   margin-top: 10px;
   height: 60px;
   text-transform: uppercase;
@@ -19,7 +17,6 @@
   border: 2px solid #f5d2d2;
   font-size: 1.2em;
   font-weight: 400;
-  /* padding-left: 20px; */
   box-shadow: 4.7px 9.4px 9.4px hsl(0deg 0% 0% / 0.15);
   transition: .2s ease-in-out;
 }

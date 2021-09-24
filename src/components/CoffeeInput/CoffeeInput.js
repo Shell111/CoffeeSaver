@@ -1,5 +1,5 @@
 
-import './InputAmount.css'
+import '../InputAmount/InputAmount.css'
 
 export function CoffeeInput({coffeeAmount, onChange}){
 
@@ -15,7 +15,6 @@ export function CoffeeInput({coffeeAmount, onChange}){
             placeholder="How many coffees saved?"
             min="0" 
           />
-          {/* <p className="input__section--text">Coffees: {coffeeAmount}</p> */}
 
       </div>
 

@@ -1,8 +1,7 @@
 import './Layout.css'
 import 'react-calendar/dist/Calendar.css';
 import './Calendar.css'
-import './Total.css'
-import './DarkMode.css'
+import './DarkMode/DarkMode.css'
 
 import React, { useState } from 'react';
 import {
@@ -11,24 +10,24 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Header } from './Header'
-import { Intro } from './Intro'
-import { InputAmount } from './InputAmount'
+import { Header } from './Header/Header'
+import { Intro } from './Intro/Intro'
+import { InputAmount } from './InputAmount/InputAmount'
 import Calendar from 'react-calendar'
-import { ConfirmButton } from './ConfirmButton'
-import { Total } from './Total'
-import { CoffeeInput } from './CoffeeInput'
-import DarkMode from './DarkMode'
-import { Footer } from './Footer';
-import { DisplayEntries } from './DisplayEntries';
-import { About } from './About'
+import { ConfirmButton } from './ConfirmButton/ConfirmButton'
+import { Total } from './Total/Total'
+import { CoffeeInput } from './CoffeeInput/CoffeeInput'
+import DarkMode from './DarkMode/DarkMode'
+import { Footer } from './Footer/Footer';
+import { DisplayEntries } from './DisplayEntries/DisplayEntries';
+import { About } from './About/About'
 import { PopUp } from './PopUp/PopUp'
 
 
 export function CoffeeSaverApp(){
   const [date, setDate] = useState(new Date());
   const [amountInput, setAmountInput] = useState(0); 
-  const [coffeeAmount, setCoffeeAmount] = useState(0);
+  const [coffeeAmount, setCoffeeAmount] = useState(1);
   const [popUp, setPopUp] = useState({
     show: false, // initial values set to false and null
   });
@@ -66,16 +65,10 @@ export function CoffeeSaverApp(){
   }
   
 
-  // Display entries
-  // const onClick = () => setShowEntryHistory(true)
-  // const onClick = () => setShowEntryHistory(!showEntryHistory)
-
-
-
-  // This will reset state and inputs to 0
+  // This will reset state and inputs 
   function resetState() {
     setAmountInput(0)
-    setCoffeeAmount(0)
+    setCoffeeAmount(1)
   }
 
 
@@ -133,9 +126,6 @@ export function CoffeeSaverApp(){
 
               <main className="calendar__section" >
                   <Calendar className="react-calendar react-calendar__viewContainer react-calendar_custom" 
-                    // onChange={onChange}
-                    // showWeekNumbers
-                    // value={value}
                     onChange={onDateChange}
                     showWeekNumbers
                     value={date}
@@ -145,15 +135,12 @@ export function CoffeeSaverApp(){
               <ConfirmButton text={`Add to savings`}
                   onClick={(e) => {
                     updateData(amountInput, coffeeAmount, date)
-                  // setTotalSaving(totalSaving + savingsToday)
                   }}
               />
               <Total totalSaving={sum.toFixed(2)} />
 
               <div>
  
-                {/* <button className="clear-item" onClick={clearItem}>Clear balance</button> */}
-
                 <button className="clear-item" onClick={clearItem}>Clear balance</button>
 
                 {popUp.show && (<PopUp
@@ -164,19 +151,11 @@ export function CoffeeSaverApp(){
               </div>
             </div>
 
-            <div>
-              <div>
-                {/* <Link to='/history'>
-                  <button onClick={onClick}>Show History</button>
-                </Link> */}
-              </div>
-            </div>
           </Route> 
 
           <Route path="/history"><div>{DisplayEntries(data)}</div> </Route>
           <Route path="/about">{About}</Route>
 
-        {/* <div>{showEntryHistory ? DisplayEntries(data) : null}</div> */}
         </Switch>
 
         <Footer/>
