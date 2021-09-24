@@ -22,7 +22,7 @@
 }
 
 .footer__text {
-  margin: 0;
+  margin: 8px 0 0 0;
   display: inline;
   font-size: 0.9em;
   position: relative;
